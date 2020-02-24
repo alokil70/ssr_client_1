@@ -193,6 +193,8 @@ export default {
             const index = this.productsFormList.indexOf(item)
             confirm('Are you sure you want to delete this item?') &&
                 this.productsFormList.splice(index, 1)
+            this.$store.dispatch('products/productDelete', item.id)
+            this.$store.dispatch('products/fetch')
         },
 
         close() {
